@@ -74,7 +74,7 @@ sup {
 .glass__loader {
   height: 150px;
   width: 150px;
-  background-image: url("img/white-cloud-loader.png");
+  background-image: url("./img/white-cloud-loader.png");
   background-size: cover;
   background-position: center;
   animation: load linear 1.5s infinite;
@@ -196,7 +196,7 @@ input {
   padding: 0 20px 0 40px;
   box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
   background-color: rgba(200, 200, 200, 0.2);
-  background-image: url("img/search-icon-white-one-md.png");
+  background-image: url("./img/search-icon-white-one-md.png");
   background-size: 14px;
   background-repeat: no-repeat;
   background-position: 16px 48%;
