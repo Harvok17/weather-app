@@ -25,7 +25,6 @@ class View {
   render(data) {
     if (!data) return;
 
-    // const markup = this._generateMarkup();
     const markup = `
     <div class="glass__weather">
       <span>Updated as of:</span>
@@ -39,14 +38,20 @@ class View {
       </div>
       <p>${data.description}</p>
       <div class="glass__details">
-          <p>Feels like: ${data.feelsLike} °${data.unit === "metric" ? "C" : "F"}</p>
+          <p>Feels like: ${data.feelsLike} °${
+      data.unit === "metric" ? "C" : "F"
+    }</p>
           <p>Humidity: ${data.humidity}%</p>
           <p>Sunrise: ${data.sunrise}</p>
           <p>Sunset: ${data.sunset}</p>
       </div>
       <div class="glass__switch">
-          <div class="glass__select celcius ${data.unit === 'metric' ? 'glass__select--active' : ''}" data-unit="metric">C</div>
-          <div class="glass__select fahrenheit ${data.unit === 'imperial' ? 'glass__select--active' : ''}" data-unit="imperial">F</div>
+          <div class="glass__select celcius ${
+            data.unit === "metric" ? "glass__select--active" : ""
+          }" data-unit="metric">C</div>
+          <div class="glass__select fahrenheit ${
+            data.unit === "imperial" ? "glass__select--active" : ""
+          }" data-unit="imperial">F</div>
       </div>
     </div>
     `;
@@ -84,12 +89,12 @@ class View {
   }
 
   addHandlerConvert(handler) {
-    this._parentElement.addEventListener('click', function(e) {
-      const btn = e.target.closest('.glass__select')
-      if(!btn || btn.classList.contains('glass__select--active')) return
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".glass__select");
+      if (!btn || btn.classList.contains("glass__select--active")) return;
 
-      handler(btn.dataset.unit)
-    })
+      handler(btn.dataset.unit);
+    });
   }
 }
 

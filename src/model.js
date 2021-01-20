@@ -20,14 +20,16 @@ const convertTime = function (timestamp, format = "short") {
 
 export const convertUnit = function (unit) {
   if (unit === "imperial") {
-    weather.data.temp = Math.round(weather.data.temp * 9 / 5 + 32);
-    weather.data.feelsLike = Math.round(weather.data.feelsLike * 9 / 5 + 32);
+    weather.data.temp = Math.round((weather.data.temp * 9) / 5 + 32);
+    weather.data.feelsLike = Math.round((weather.data.feelsLike * 9) / 5 + 32);
     weather.data.unit = "imperial";
   }
 
   if (unit === "metric") {
     weather.data.temp = Math.round(((weather.data.temp - 32) * 5) / 9);
-    weather.data.feelsLike = Math.round(((weather.data.feelsLike - 32) * 5) / 9);
+    weather.data.feelsLike = Math.round(
+      ((weather.data.feelsLike - 32) * 5) / 9
+    );
     weather.data.unit = "metric";
   }
 };

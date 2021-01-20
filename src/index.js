@@ -24,7 +24,7 @@ const loadLocation = async function (position) {
     view.render(model.weather.data);
   } catch (err) {
     console.error(err);
-    view.renderMessage(err.message)
+    view.renderMessage(err.message);
   }
 };
 
@@ -46,15 +46,15 @@ const controlSearchWeather = async function () {
   }
 };
 
-const controlConvert = function(unit) {
-  model.convertUnit(unit)
+const controlConvert = function (unit) {
+  model.convertUnit(unit);
   view.render(model.weather.data);
-}
+};
 
 const init = function () {
   view.addHandlerRender(controlGetLocationWeather);
   view.addHandlerSearch(controlSearchWeather);
-  view.addHandlerConvert(controlConvert)
+  view.addHandlerConvert(controlConvert);
 };
 
 init();
