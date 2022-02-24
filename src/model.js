@@ -63,7 +63,7 @@ export const loadWeather = async function (loc) {
 
     const data2 = await AJAX(`${REST_COUNTRY_URL}${weather.data.country}`);
 
-    weather.data.flag = data2[0].flag;
+    weather.data.flag = data2[0].flags.svg;
   } catch (err) {
     throw err;
   }
